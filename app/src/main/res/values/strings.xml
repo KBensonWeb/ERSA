@@ -70,5 +70,6 @@
     <string name="satis">Satisfying</string>
     <string name="poor">Poor</string>
     <string name="unresolved">Unresolved</string>
+    <string name="comments">Type your clarifications and comments here.</string>
 
 </resources>
