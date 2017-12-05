@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">ERSA</string>
+    <string name="welcome">Welcome to the Emergency Room Satisfaction App.\nWe thank you for
+        taking the time to answer a quick survey about your visit at our hospital.</string>
+    <string name="wbutton">Take the Survey!</string>
+    <string name="sbutton">Submit</string>
+    <string name="success">Your answers were submitted successfully.\n
+        Your opinion matters to us, and we appreciate your time.\nThank you.</string>
+    <string name="q1">Which location did you visit?</string>
+    <string name="q2">What was the date of your visit?</string>
+    <string name="q3">Around what time did you arrive at the emergency room?</string>
+    <string name="q4">Around what time did you leave the emergency room?</string>
+    <string name="q5">How likely are you to recommend our emergency room to others?</string>
+    <string name="q6">Overall, how satisfied are you with your visit to our emergency room?</string>
+    <string name="q7">Which words would you choose to describe your visit?</string>
+    <string name="q8">On a scale of 1 to 10 with 1 being extremely unsatisfied and 10 being
+        extremely satisfied, how satisfied were you with the nurse(s) you interacted with?</string>
+    <string name="q9">On a scale of 1 to 10 with 1 being extremely unsatisfied and 10 being
+        extremely satisfied, how satisfied were you with the doctor you interacted with?</string>
+    <string name="q10">On a scale of 1 to 10 with 1 being extremely unsatisfied and 10 being
+        extremely satisfied, how satisfied were you with the quality of the waiting room?</string>
+    <string name="q11">On a scale of 1 to 10 with 1 being extremely unsatisfied and 10 being
+        extremely satisfied, if you received tests (urine, blood, etc.) or x-rays, how satisfied
+        were you with the staff you interacted with for these tests?</string>
+    <string name="q12">On a scale of 1 to 5 with 1 being strongly disagree, 3 being neutral and 5
+        being strongly agree, how do you feel about the following statement?\nThe staff I interacted
+        with during my visit treated me with respect.</string>
+    <string name="q13">On a scale of 1 to 5 with 1 being strongly disagree, 3 being neutral and 5
+        being strongly agree, how do you feel about the following statement?\nThe hospital was kept
+        clean.</string>
+    <string name="q14">Please provide any clarifications to previous ratings or comments below.</string>
+    <string name="alpena">Alpena</string>
+    <string name="clare">Clare</string>
+    <string name="gladwin">Gladwin</string>
+    <string name="gratiot">Gratiot</string>
+    <string name="midland">Midland</string>
+    <string name="mtpleasant">Mt. Pleasant</string>
+    <string-array name="oneten">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string-array name="tenna">
+        <item>NA</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="strong">Strongly Agree</string>
+    <string name="neutral">Neutral</string>
+    <string name="strongdis">Strongly Disagree</string>
+    <string name="stitle">Hospital ER Patient Survey</string>
+    <string name="quick">Quick</string>
+    <string name="thorough">Thorough</string>
+    <string name="slong">Long</string>
+    <string name="satis">Satisfying</string>
+    <string name="poor">Poor</string>
+    <string name="unresolved">Unresolved</string>
+
+</resources>
