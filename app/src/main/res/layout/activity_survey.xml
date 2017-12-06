@@ -111,15 +111,36 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/glocation" />
 
-        <Button
-            android:id="@+id/date"
+        <Spinner
+            android:id="@+id/month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/date"
+            android:layout_marginTop="8dp"
+            android:entries="@array/month"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/q2" />
+
+        <TextView
+            android:id="@+id/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@+id/q3"
+            app:layout_constraintStart_toEndOf="@+id/month"
             app:layout_constraintTop_toBottomOf="@+id/q2"
-            android:onClick="showDatePickerDialog"/>
+            tools:text="/" />
+
+        <Spinner
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:entries="@array/day"
+            app:layout_constraintStart_toEndOf="@+id/dash"
+            app:layout_constraintTop_toBottomOf="@+id/q2" />
 
         <TextView
             android:id="@+id/q3"
@@ -129,7 +150,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/q3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/date" />
+            app:layout_constraintTop_toBottomOf="@+id/day" />
 
         <Spinner
             android:id="@+id/spin3"
@@ -499,7 +520,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/comments"
-            android:onClick="submit"/>
+            android:onClick="submitSurvey"/>
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>

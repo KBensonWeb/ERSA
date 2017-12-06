@@ -2,7 +2,6 @@ package com.kbensonweb.ersa;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +14,11 @@ import android.widget.Spinner;
 import java.io.IOException;
 
 import okhttp3.FormBody;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
 public class SurveyActivity extends AppCompatActivity {
-    public static final String EXTRA_TEXT = "2017-12-05";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,16 +26,14 @@ public class SurveyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_survey);
     }
 
-    public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
-    }
-
     public void submitSurvey(View view) {
-        RadioGridGroup glocation = (RadioGridGroup)findViewById(R.id.glocation);
+        Spinner spinmonth = findViewById(R.id.month);
+        String month = spinmonth.getSelectedItem().toString();
+        Spinner spinday = findViewById(R.id.day);
+        String day = spinday.getSelectedItem().toString();
+        String vDate = "2017-" + month + "-" + day;
+        RadioGridGroup glocation = findViewById(R.id.glocation);
         String location= ((RadioButton)findViewById(glocation.getCheckedRadioButtonId())).getText().toString();
-        Intent d = getIntent();
-        String vDate = d.getStringExtra("EXTRA_TEXT");
         Spinner spintin = findViewById(R.id.spin3);
         String tin = spintin.getSelectedItem().toString();
         Spinner spintout = findViewById(R.id.spin4);
@@ -75,24 +70,35 @@ public class SurveyActivity extends AppCompatActivity {
         Spinner spintests = findViewById(R.id.spin11);
         String tests = spintests.getSelectedItem().toString();
         RadioGroup grespect = findViewById(R.id.grespect);
-        String respect = ((RadioButton)findViewById(glocation.getCheckedRadioButtonId())).getText().toString();
+        String respect = ((RadioButton)findViewById(grespect.getCheckedRadioButtonId())).getText().toString();
         RadioGroup gclean = findViewById(R.id.gclean);
-        String clean = ((RadioButton)findViewById(glocation.getCheckedRadioButtonId())).getText().toString();
+        String clean = ((RadioButton)findViewById(gclean.getCheckedRadioButtonId())).getText().toString();
         EditText ecomments = findViewById(R.id.comments);
         String comments = ecomments.getText().toString();
 
 
         AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
             @Override
-            protected Void doInBackground(String... movieInfo) {
+            protected Void doInBackground(String... survey) {
                 OkHttpClient client = new OkHttpClient();
                 RequestBody formBody = new FormBody.Builder()
-                        .add("name", movieInfo[0])
-                        .add("image", movieInfo[1])
-                        .add("genre", movieInfo[2])
+                        .add("location", survey[0])
+                        .add("date", survey[1])
+                        .add("time_in", survey[2])
+                        .add("time_out", survey[3])
+                        .add("recommend", survey[4])
+                        .add("overall", survey[5])
+                        .add("words", survey[6])
+                        .add("nurse", survey[7])
+                        .add("doctor", survey[8])
+                        .add("waiting_room", survey[9])
+                        .add("tests", survey[10])
+                        .add("respect", survey[11])
+                        .add("clean", survey[12])
+                        .add("comments", survey[13])
                         .build();
                 Request request = new Request.Builder()
-                        .url("https://kbensonweb.com/movies_add.php")
+                        .url("https://ersa.kbensonweb.com/ersa_api.php")
                         .post(formBody)
                         .build();
                 try {
@@ -104,15 +110,11 @@ public class SurveyActivity extends AppCompatActivity {
             }
         };
 
-        //asyncTask.execute(name,image,genre);
+        asyncTask.execute(location,vDate,tin,tout,recommend,satisfaction,words,nurses,doc,waitroom,
+                tests,respect,clean,comments);
 
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-
-    }
-
-    public void submit(View view) {
         Intent intent = new Intent(this, SuccessActivity.class);
         startActivity(intent);
+
     }
 }
