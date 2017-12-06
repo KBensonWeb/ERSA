@@ -111,35 +111,32 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/glocation" />
 
-        <EditText
-            android:id="@+id/visitDate"
+        <Button
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="date"
+            android:text="@string/date"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/q2" />
+            app:layout_constraintTop_toBottomOf="@+id/q2"
+            android:onClick="showDatePickerDialog"/>
 
         <TextView
             android:id="@+id/q3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/q3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/visitDate" />
+            app:layout_constraintTop_toBottomOf="@+id/date" />
 
-        <EditText
-            android:id="@+id/inTime"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spin3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="time"
+            android:entries="@array/time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/q3" />
 
@@ -148,19 +145,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/q4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inTime" />
+            app:layout_constraintTop_toBottomOf="@+id/spin3" />
 
-        <EditText
-            android:id="@+id/outTime"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spin4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="time"
+            android:entries="@array/time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/q4" />
 
@@ -169,10 +164,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/q5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outTime" />
+            app:layout_constraintTop_toBottomOf="@+id/spin4" />
 
         <Spinner
             android:id="@+id/spinq5"
@@ -363,7 +358,7 @@
             app:layout_constraintTop_toBottomOf="@+id/spin11" />
 
         <RadioGroup
-            android:id="@+id/rgq12"
+            android:id="@+id/grespect"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -418,10 +413,10 @@
             android:layout_marginTop="16dp"
             android:text="@string/q13"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rgq12" />
+            app:layout_constraintTop_toBottomOf="@+id/grespect" />
 
         <RadioGroup
-            android:id="@+id/rgq13"
+            android:id="@+id/gclean"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -473,10 +468,11 @@
             android:id="@+id/q14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:text="@string/q14"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rgq13" />
+            app:layout_constraintTop_toBottomOf="@+id/gclean" />
 
         <EditText
             android:id="@+id/comments"
