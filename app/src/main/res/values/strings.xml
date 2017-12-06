@@ -169,5 +169,8 @@
     <string name="poor">Poor</string>
     <string name="unresolved">Unresolved</string>
     <string name="comments">Type your clarifications and comments here.</string>
+    <string name="slash">/</string>
+    <string name="month">Month:</string>
+    <string name="day">Day:</string>
 
 </resources>

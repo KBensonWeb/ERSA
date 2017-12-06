@@ -18,6 +18,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
+
 public class SurveyActivity extends AppCompatActivity {
 
     @Override
@@ -76,6 +77,13 @@ public class SurveyActivity extends AppCompatActivity {
         EditText ecomments = findViewById(R.id.comments);
         String comments = ecomments.getText().toString();
 
+        /*String errythang = vDate + "\n" + location + "\n" + tin + "\n" + tout + "\n" + recommend + "\n" +
+                satisfaction + "\n" + words + "\n" + nurses + "\n" + doc + "\n" + waitroom + "\n" +
+                tests + "\n" + respect + "\n" + clean + "\n" + comments;
+
+        Intent intent = new Intent(view.getContext(), SuccessActivity.class);
+        intent.putExtra("EXTRA_TEXT",errythang);
+        startActivity(intent);*/
 
         AsyncTask<String, Void, Void> asyncTask = new AsyncTask<String, Void, Void>() {
             @Override
@@ -108,6 +116,7 @@ public class SurveyActivity extends AppCompatActivity {
                 }
                 return null;
             }
+
         };
 
         asyncTask.execute(location,vDate,tin,tout,recommend,satisfaction,words,nurses,doc,waitroom,
